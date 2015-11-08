@@ -14,7 +14,7 @@ optdepends=(
     "kdebase-kdialog: KDE's OSD"
     "sudo: super-user privileges gaining"
     "gksu: GNOME/GTK super-user privileges gaining"
-    "pm-utils : Power management (suspend and hibernate) utilities"
+    "pm-utils: Power management (suspend and hibernate) utilities"
 )
 install=$pkgname.install
 backup=(etc/conf.d/acpi-eeepc-generic.conf)
