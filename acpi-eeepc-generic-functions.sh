@@ -285,7 +285,7 @@ function alsa_toggle_mute() {
 ### Get the model name ##########################################
 function get_model() {
     if [ -z "${EEEPC_MODEL}" ]; then
-        echo "EEEPC_MODEL=\"$(dmidecode -s system-product-name | sed 's/[ \t]*$//')\"" >> /etc/conf.d/acpi-eeepc-generic.conf
+        echo "EEEPC_MODEL=\"$(cat /sys/devices/virtual/dmi/id/product_name | sed 's/[ \t]*$//')\"" >> /etc/conf.d/acpi-eeepc-generic.conf
         CPU=NONE
         grep_cpu=`grep Celeron /proc/cpuinfo`
         [ "x$grep_cpu" != "x" ] && CPU="Celeron"
@@ -344,7 +344,7 @@ function brightness_find_direction() {
 ### Print generic debug information #############################
 function print_generic_debug() {
     echo "DEBUG: EeePC model: $EEEPC_MODEL ($EEEPC_CPU)"
-    echo "DEBUG: BIOS version: `dmidecode | grep -A 5 BIOS | grep Version | awk '{print ""$2""}'`"
+    echo "DEBUG: BIOS version: `cat /sys/devices/virtual/dmi/id/bios_version`"
     echo "DEBUG: Running kernel: `uname -a`"
     if [ -e /usr/bin/pacman ]; then
         echo "DEBUG: Installed kernel(s):"

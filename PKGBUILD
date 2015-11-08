@@ -7,7 +7,7 @@ pkgdesc="ACPI scripts for many EeePC netbook computers"
 url="https://github.com/nbigaouette/acpi-eeepc-generic"
 arch=(any)
 license=(GPL3)
-depends=(acpid xorg-server-utils dmidecode)
+depends=(acpid xorg-server-utils)
 optdepends=(
     "unclutter: Hide cursor when touchpad is disabled"
     "kdebase-runtime: KDE's super-user privileges gaining"
@@ -137,7 +137,7 @@ md5sums=('cf253e386d7e743a3d25ec4165051521'
          '75bd2c42f01a6733ab5a2f7a0c15c70d'
          '75bd2c42f01a6733ab5a2f7a0c15c70d'
          'c75b95926e0ac397b0eea6e054ea9154'
-         '096f637d1548b2f28a6ddf751f5ff2c2'
+         'c790ab26745a1c235ff9f62a147f5e04'
          '000e26f2fd8fb92f750296b755a16649'
          '06137998d8ef768763bb327f8716641e'
          '7e26565bd36e2411ab998d6bcfe15f9e'

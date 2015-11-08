@@ -5,7 +5,7 @@ post_install() {
         sed -i 's/^[^#]/#&/' /etc/acpi/events/anything
 
     # Detect if model is not supported
-    eeepc_model=`dmidecode -s system-product-name`
+    eeepc_model=`cat /sys/devices/virtual/dmi/id/product_name`
     if [[ ! -e "/etc/acpi/eeepc/models/acpi-eeepc-${eeepc_model}-events.conf" ]]; then
         echo ">>> You're model ${eeepc_model} is not (yet) supported."
         echo ">>> Please report it to http://github.com/nbigaouette/acpi-eeepc-generic/issues"
